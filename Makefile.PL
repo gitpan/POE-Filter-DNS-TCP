@@ -9,24 +9,24 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'A POE Filter to handle DNS over TCP connections',
-  'AUTHOR' => 'Chris Williams <chris@bingosnet.co.uk>, Hans Dieter Pearcey <hdp@cpan.org>, Rocco Caputo <rcaputo@cpan.org>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "ABSTRACT" => "A POE Filter to handle DNS over TCP connections",
+  "AUTHOR" => "Chris Williams <chris\@bingosnet.co.uk>, Hans Dieter Pearcey <hdp\@cpan.org>, Rocco Caputo <rcaputo\@cpan.org>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'POE-Filter-DNS-TCP',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'POE::Filter::DNS::TCP',
-  'PREREQ_PM' => {
-    'Net::DNS' => '0.66',
-    'Net::DNS::Packet' => '0',
-    'POE::Filter' => '1.311'
+  "DISTNAME" => "POE-Filter-DNS-TCP",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "POE::Filter::DNS::TCP",
+  "PREREQ_PM" => {
+    "Net::DNS" => "0.66",
+    "Net::DNS::Packet" => 0,
+    "POE::Filter" => "1.311"
   },
-  'VERSION' => '0.02',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.04",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

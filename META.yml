@@ -8,7 +8,7 @@ build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,6 +20,6 @@ requires:
   POE::Filter: 1.311
   perl: v5.6.0
 resources:
-  homepage: http://github.com/bingos/poe-filter-dns-tcp
-  repository: http://github.com/bingos/poe-filter-dns-tcp
-version: 0.02
+  homepage: https://github.com/bingos/poe-filter-dns-tcp
+  repository: https://github.com/bingos/poe-filter-dns-tcp.git
+version: 0.04

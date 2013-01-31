@@ -1,6 +1,6 @@
 package POE::Filter::DNS::TCP;
-BEGIN {
-  $POE::Filter::DNS::TCP::VERSION = '0.02';
+{
+  $POE::Filter::DNS::TCP::VERSION = '0.04';
 }
 
 #ABSTRACT: A POE Filter to handle DNS over TCP connections
@@ -78,6 +78,7 @@ sub put {
   my @blocks;
   foreach my $packet (@$packets) {
     next unless eval { $packet->isa('Net::DNS::Packet'); };
+    $packet->{buffer} = '';
     my $packet_data = $packet->data;
     my $lenmsg = pack( 'n', length $packet_data );
     push @blocks, $lenmsg . $packet_data;
@@ -87,8 +88,8 @@ sub put {
 
 q[You know like, in'it];
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -97,7 +98,7 @@ POE::Filter::DNS::TCP - A POE Filter to handle DNS over TCP connections
 
 =head1 VERSION
 
-version 0.02
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -169,10 +170,9 @@ Rocco Caputo <rcaputo@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Chris Williams, Hans Dieter Pearcey and Rocco Caputo.
+This software is copyright (c) 2013 by Chris Williams, Hans Dieter Pearcey and Rocco Caputo.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
