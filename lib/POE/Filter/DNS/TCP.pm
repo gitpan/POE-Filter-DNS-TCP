@@ -1,8 +1,5 @@
 package POE::Filter::DNS::TCP;
-{
-  $POE::Filter::DNS::TCP::VERSION = '0.04';
-}
-
+$POE::Filter::DNS::TCP::VERSION = '0.06';
 #ABSTRACT: A POE Filter to handle DNS over TCP connections
 
 use strict;
@@ -16,6 +13,7 @@ use bytes;
 
 sub FRAMING_BUFFER () { 0 }
 sub EXPECTED_SIZE  () { 1 }
+sub INT16SZ        () { 2 }
 
 sub new {
   my $class = shift;
@@ -59,11 +57,11 @@ sub get_one {
 
 sub _decoder {
   my $data = shift;
-  my $buf = substr $$data, 0, Net::DNS::INT16SZ();
+  my $buf = substr $$data, 0, INT16SZ;
   return unless length $buf;
   my ($len) = unpack 'n', $buf;
   return unless $len;
-  substr $$data, 0, Net::DNS::INT16SZ(), '';
+  substr $$data, 0, INT16SZ, '';
   return $len;
 }
 
@@ -92,13 +90,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 POE::Filter::DNS::TCP - A POE Filter to handle DNS over TCP connections
 
 =head1 VERSION
 
-version 0.04
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -115,6 +115,7 @@ received from or transmitted (respectively) over TCP as per RFC 1035.
 
 =for Pod::Coverage  FRAMING_BUFFER
  EXPECTED_SIZE
+ INT16SZ
 
 =head1 CONSTRUCTOR
 
@@ -170,7 +171,7 @@ Rocco Caputo <rcaputo@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Chris Williams, Hans Dieter Pearcey and Rocco Caputo.
+This software is copyright (c) 2014 by Chris Williams, Hans Dieter Pearcey and Rocco Caputo.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

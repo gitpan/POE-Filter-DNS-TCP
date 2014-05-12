@@ -2,7 +2,7 @@ NAME
     POE::Filter::DNS::TCP - A POE Filter to handle DNS over TCP connections
 
 VERSION
-    version 0.04
+    version 0.06
 
 SYNOPSIS
       use POE::Filter::DNS::TCP;
@@ -42,7 +42,7 @@ AUTHORS
     *   Rocco Caputo <rcaputo@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Chris Williams, Hans Dieter
+    This software is copyright (c) 2014 by Chris Williams, Hans Dieter
     Pearcey and Rocco Caputo.
 
     This is free software; you can redistribute it and/or modify it under

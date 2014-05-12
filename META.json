@@ -6,7 +6,7 @@
       "Rocco Caputo <rcaputo@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.141170",
    "license" : [
       "perl_5"
    ],
@@ -35,6 +35,14 @@
             "POE::Filter" : "1.311",
             "perl" : "v5.6.0"
          }
+      },
+      "test" : {
+         "requires" : {
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
+            "Test::More" : "0"
+         }
       }
    },
    "release_status" : "stable",
@@ -46,6 +54,6 @@
          "web" : "https://github.com/bingos/poe-filter-dns-tcp"
       }
    },
-   "version" : "0.04"
+   "version" : "0.06"
 }
 
